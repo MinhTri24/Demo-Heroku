@@ -1,8 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var authen = require('../models/authenticate');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('view');
+  res.render('login');
 });
+
+router.post('/', async function(req, res, next) {
+  var uname = req.body.username
+  var passwd = req.body.password
+  var auth = await authen(uname, passwd)
+  if (auth==true){
+    res.render('user.ejs', {message: 'hello' + " " + uname})
+  }else{
+    res.render('login.ejs')
+  }
+});
+
 module.exports = router;

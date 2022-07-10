@@ -1,4 +1,5 @@
-const { Pool } = require('pg')
+const { Pool } = require('pg');
+
 const pg_connection = new Pool({
     user: 'ftxwpzkmjvrynu',
     host: 'ec2-52-73-184-24.compute-1.amazonaws.com',
@@ -9,4 +10,5 @@ const pg_connection = new Pool({
         rejectUnauthorized: false
     }
 })
+
 module.exports = pg_connection  

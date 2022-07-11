@@ -53,20 +53,20 @@ async function displayTable (user)
         bodyTable += "</tr>"
         stringTable += bodyTable
     }
-    stringTable += `<tr><form method='POST' action='/users/add${get_query}'>`
+    stringTable += `<tr><form method='POST' action1='/users/add${get_query} action2='/users/edit?user=${user}'>`
     for (let headerIndex in headerData) 
     {
         stringTable += `<td scope='row'><input type='text' name=${headerData[headerIndex]} ></td>`;
     }
-    stringTable += "<td scope='row'> <button class='btn btn-success' type='submit'> Add </button></td>"
+    stringTable += "<td scope='row'> <button class='btn btn-success' type='submit'> Add </button> <button class='btn btn-success' type='submit'> Edit </button></td>"
     stringTable += "</form></tr>"
-    stringTable += `<tr><form method='POST' action='/users/edit?user=${user}'>`
-    for (let headerIndex in headerData) 
-    {
-        stringTable += `<td scope='row'><input type='text' name=${headerData[headerIndex]} ></td>`;
-    }
-    stringTable += "<td scope='row'> <button class='btn btn-success' type='submit'> Edit </button></td>"
-    stringTable += "</form></tr>"
+    // stringTable += `<tr><form method='POST' action='/users/edit?user=${user}'>`
+    // for (let headerIndex in headerData) 
+    // {
+    //     stringTable += `<td scope='row'><input type='text' name=${headerData[headerIndex]} ></td>`;
+    // }
+    // stringTable += "<td scope='row'> <button class='btn btn-success' type='submit'> Edit </button></td>"
+    // stringTable += "</form></tr>"
     stringTable += "</tbody></table>"   
     console.log(stringTable)
     return stringTable

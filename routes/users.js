@@ -54,6 +54,18 @@ router.post('/add', async function(req, res, next) {
             )
 });
 
+// router.get('/add', function(req, res){
+//   res.render('add');
+// });
+// router.post('/add', function(req, res){
+//   pg_connection.query(`insert into product (product_id, product_name, product_price, product_quantity, role)
+//                         values ('${req.body.id}', '${req.body.name}', '${req.body.price}', '${req.body.quantity}', '${req.body.role}')`,
+//                         function(err){
+//                           if(err) throw err;
+//                           res.redirect("/")
+//                         })
+// })
+
 // router.get("/edit/:id", function(req, res){
 //   var data = pg_connection.query(`select * from product where id = ${req.params.id}`, function(err, result){
 //     if(err) throw err;
